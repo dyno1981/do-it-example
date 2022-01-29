@@ -23,6 +23,7 @@
     "selector-action": "^1.1.1"
   },
   "scripts": {
+    "storybook": "start-storybook -p 9001 -c .storybook",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
