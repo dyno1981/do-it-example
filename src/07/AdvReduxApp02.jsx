@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react'
 import {Provider} from 'react-redux'
 import configureStore from './configureStore'
-import {setLoading, resetLoadiong} from './actions/loadingActions'
+import {setLoading, resetLoading} from './actions/loadingActions'
 import {setUser} from './actions/userActions'
 
 class AdvReduxApp02 extends PureComponent {
@@ -9,7 +9,7 @@ class AdvReduxApp02 extends PureComponent {
 
   componentDidMount() {
     this.store.dispatch(setLoading(true))
-    this.store.dispatch(resetLoadiong())
+    this.store.dispatch(resetLoading())
     this.store.dispatch(setUser({name: 'Park', age: 20}))
   }
 

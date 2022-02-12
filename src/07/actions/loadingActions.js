@@ -6,6 +6,6 @@ export const setLoading = loading => ({
   payload: loading
 })
 
-export const resetLoadiong = () => ({
+export const resetLoading = () => ({
   type: RESET_LOADING
 })
