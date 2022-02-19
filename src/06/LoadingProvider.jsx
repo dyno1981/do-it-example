@@ -1,32 +1,33 @@
-import React, {Component} from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class LoadingProvider extends Component {
+class LoadingProvider extends React.Component {
   constructor(props) {
-    super(props)
-    this.state = {loading: false}
-    this.setLoading = this.setLoading.bind(this)
+    super(props);
+
+    this.state = { loading: false };
+    this.setLoading = this.setLoading.bind(this);
   }
 
   getChildContext() {
     return {
       loading: this.state.loading,
-      setLoading: this.setLoading
-    }
+      setLoading: this.setLoading,
+    };
   }
 
   setLoading(loading) {
-    this.setLoading({loading})
+    this.setState({ loading });
   }
 
   render() {
-    return this.props.children
+    return this.props.children;
   }
 }
 
 LoadingProvider.childContextTypes = {
   loading: PropTypes.bool,
-  setLoading: PropTypes.func
-}
+  setLoading: PropTypes.func,
+};
 
-export default LoadingProvider
+export default LoadingProvider;

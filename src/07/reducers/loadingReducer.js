@@ -1,17 +1,17 @@
-import {SET_LOADING, RESET_LOADING} from '../actions/loadingActions'
+import { SET_LOADING, RESET_LOADING } from '../actions/loadingActions';
 
-const initState = false
+const initState = false;
 
-export default function reducer(state = initState, action) {
-  const {type, payload} = action
-  switch (type) {
+export default function reducer (state = initState, action) {
+  const { type, payload } = action;
+  switch(type) {
     case SET_LOADING: {
-      return payload
+      return payload;
     }
     case RESET_LOADING: {
-      return initState
+      return initState;
     }
     default:
-      return state
+      return state;
   }
-}
+};

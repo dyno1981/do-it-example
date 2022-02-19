@@ -1,53 +1,53 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import {Provider} from './FormContext'
+import { Provider } from './FormContext';
 
 class FormProvider extends React.PureComponent {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       values: {},
-      errors: {}
-    }
+      errors: {},
+    };
     this.reset = this.reset.bind(this);
     this.onChange = this.onChange.bind(this);
-    this.submit = this.submit.bind(this)
+    this.submit = this.submit.bind(this);
   }
 
   onChange(name, updatedValue) {
     this.setState(
-      ({values}) => ({
+      ({ values }) => ({
         values: {
           ...values,
-          [name]: updatedValue
-        }
+          [name]: updatedValue,
+        },
       }),
-      () => this.validate(this.state.values)
-    )
+      () => this.validate(this.state.values),
+    );
   }
 
   reset() {
-    this.setState({values: {}, errors: {}})
+    this.setState({ values: {}, errors: {} });
   }
 
   submit() {
-    this.props.onSubmit(this.state.values)
+    this.props.onSubmit(this.state.values);
   }
 
   validate(values) {
-    const {validate} = this.props;
+    const { validate } = this.props;
     if (!validate) {
-      return
+      return;
     }
     const errors = this.props.validate(values);
     this.setState({
-      errors
-    })
+      errors,
+    });
   }
 
   render() {
-    const {values, errors} = this.state;
+    const { values, errors } = this.state;
     return (
       <Provider
         value={{
@@ -55,23 +55,23 @@ class FormProvider extends React.PureComponent {
           values,
           onChange: this.onChange,
           reset: this.reset,
-          submit: this.submit
+          submit: this.submit,
         }}
       >
         {this.props.children}
       </Provider>
-    )
+    );
   }
 }
 
 FormProvider.propTypes = {
   validate: PropTypes.func,
-  onSubmit: PropTypes.func.isRequired
-}
+  onSubmit: PropTypes.func.isRequired,
+};
 
 FormProvider.defaultProps = {
-  validate: () => ({})
-}
+  validate: () => ({}),
+};
 
 export default FormProvider;
 /*

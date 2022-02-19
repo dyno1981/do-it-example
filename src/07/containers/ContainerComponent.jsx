@@ -1,11 +1,11 @@
-import {connect} from 'react-redux'
-import PresentationComponent from '../PresentationComponent'
+import { connect } from 'react-redux';
+import PresentationComponent from '../PresentationComponent';
 
 const mapStateToProps = (state, props) => {
   return {
     userName: state.user.name,
-    entity: state.collection.entities[props.id]
-  }
-}
+    entity: state.collection.entities[props.id],
+  };
+};
 
-export default connect(mapStateToProps)(PresentationComponent)
+export default connect(mapStateToProps)(PresentationComponent);

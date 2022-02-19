@@ -1,14 +1,14 @@
-import React, {PureComponent} from 'react'
+import React, { PureComponent } from 'react';
 
-import Input from '../04/InputWithStyle'
-import {Consumer} from './FormContext'
+import Input from '../04/InputWithStyle';
+import { Consumer } from './FormContext';
 
 class FormConsumerExample extends PureComponent {
   render() {
-    const {name, ...otherProps} = this.props
+    const { name, ...otherProps } = this.props;
     return (
       <Consumer>
-        {({values, errors, onChange}) => (
+        {({ values, errors, onChange }) => (
           <Input
             {...otherProps}
             name={name}
@@ -18,8 +18,8 @@ class FormConsumerExample extends PureComponent {
           />
         )}
       </Consumer>
-    )
+    );
   }
 }
 
-export default FormConsumerExample
+export default FormConsumerExample;

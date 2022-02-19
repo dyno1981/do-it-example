@@ -1,12 +1,13 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class ChildComponent2 extends Component {
+class ChildComponent2 extends React.Component {
   render() {
     const {
       objValue,
-      requiredStringValue
-    } = this.props
+      requiredStringValue,
+    } = this.props;
+
     return (
       <div>
         <div>객체값: {String(Object.entries(objValue))}</div>
@@ -17,11 +18,13 @@ class ChildComponent2 extends Component {
 }
 
 ChildComponent2.propTypes = {
+  // 객체형 프로퍼티
   objValue: PropTypes.shape({
     name: PropTypes.string,
-    age: PropTypes.number
+    age: PropTypes.number,
   }),
-  requiredStringValue: PropTypes.string.isRequired
-}
+  // 필수 프로퍼티
+  requiredStringValue: PropTypes.string.isRequired,  
+} 
 
 export default ChildComponent2;

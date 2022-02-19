@@ -1,28 +1,24 @@
-import React, {PureComponent} from 'react'
-import {Provider} from 'react-redux'
-import {createStore} from 'redux'
+import React, { PureComponent } from 'react';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
-class ReduxApp02 extends PureComponent {
+class ReduxApp extends PureComponent {
   store = createStore(
     state => state,
-    {loading: false, name: '두잇 리액트'},
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
+    { loading: false, name: '두잇 리액트' },
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  );
 
   componentDidMount() {
     this.store.dispatch({
       type: 'SET_LOADING',
-      payload: true
-    })
+      payload: true,
+    });
   }
 
   render() {
-    return (
-      <Provider store={this.store}>
-        리덕스 예제
-      </Provider>
-    )
+    return <Provider store={this.store}>리덕스 예제</Provider>;
   }
 }
 
-export default ReduxApp02
+export default ReduxApp;

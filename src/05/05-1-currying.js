@@ -1,24 +1,32 @@
-// function multiply(a, b) {
-//   return a * b
-// }
+function multiply(a, b) {
+  return a * b;
+}
 
-// function multiplyTwo(a) {
-//   return multiply(a, 2)
-// }
+function multiplyTwo(a) {
+  return multiply(a, 2);
+}
 
-// function multiplyX(x) {
-//   return function (a) {
-//     return multiply(a, x)
-//   }
-// }
+const multiplyX = x => a => multiply(a, x);
 
-// const multiplyThree = multiplyX(3)
-// const multiplyFour = multiplyX(4)
+// a.k.a
+function multiplyX(x) {
+  return function(a) {
+    return multiply(a, x);
+  }
+}
 
-// const equation = (a, b, c) => x => ((x * a) * b) + c;
-// const formula = equation(2, 3, 4);
-// const x = 2;
-// const result = formula(x);
+const multiplyThree = multiplyX(3);
+const multiplyFour = multiplyX(4);
+
+// x
+// => x * 2
+// => (x * 2) * 3
+// => ((x * 2) * 3) + 4
+
+const equation = (a, b, c) => x => ((x * a) * b) + c;
+const formula = equation(2, 3, 4);
+const x = 2;
+const result = formula(x);
 
 const multiply = (a, b) => a * b;
 const add = (a, b) => a + b;

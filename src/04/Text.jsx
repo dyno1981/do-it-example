@@ -1,6 +1,6 @@
-import React, {PureComponent} from 'react'
-import PropTypes from 'prop-types'
-import withStyles, {css} from './withStyles'
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import withStyles, { css } from './withStyles';
 
 class Text extends PureComponent {
   render() {
@@ -13,7 +13,7 @@ class Text extends PureComponent {
       xsmall,
       primary,
       secondary,
-    } = this.props
+    } = this.props;
     return (
       <span
         {...css(
@@ -23,12 +23,12 @@ class Text extends PureComponent {
           large && styles.large,
           xlarge && styles.xlarge,
           secondary && styles.secondary,
-          primary && styles.primary
+          primary && styles.primary,
         )}
       >
         {children}
       </span>
-    )
+    );
   }
 }
 
@@ -39,13 +39,17 @@ Text.propTypes = {
   large: PropTypes.bool,
   xlarge: PropTypes.bool,
   secondary: PropTypes.bool,
-  primary: PropTypes.bool
-}
+  primary: PropTypes.bool,
+};
 
-export default withStyles(({color, size, responsive}) => ({
+export default withStyles(({ color, size, responsive }) => ({
   default: {
     color: color.default,
-    fontSize: size.md
+    fontSize: size.md,
+    [responsive.small]: {
+      textAlign: 'center',
+      width: '100%',
+    },
   },
   xlarge: {
     fontSize: size.xg,
@@ -64,5 +68,5 @@ export default withStyles(({color, size, responsive}) => ({
   },
   secondary: {
     color: color.secondary,
-  }
-}))(Text)
+  },
+}))(Text);

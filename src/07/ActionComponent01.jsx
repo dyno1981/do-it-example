@@ -1,23 +1,21 @@
-import React, {PureComponent} from 'react'
-import PropTypes from 'prop-types'
-import Button from '../04/Button'
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import Button from '../04/Button';
 
-class ActionComponent01 extends PureComponent {
+class ActionComponent extends PureComponent {
   render() {
-    const {setAge} = this.props
+    const { setAge } = this.props;
 
     return (
-      <div>
-        <React.Fragment>
-          <Button onPress={() => setAge(2, 19)}>고유번호 2번 나이 19세로 변경</Button>
-        </React.Fragment>
-      </div>
-    )
+      <React.Fragment>
+        <Button onPress={() => setAge(2, 19)}>고유번호 2번 나이 19세로 변경</Button>
+      </React.Fragment>
+    );
   }
 }
 
-ActionComponent01.propTypes = {
-  setAge: PropTypes.func
-}
+ActionComponent.propTypes = {
+  setAge: PropTypes.func,
+};
 
-export default ActionComponent01
+export default ActionComponent;

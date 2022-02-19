@@ -1,11 +1,13 @@
 const initState = {
   ids: [],
-  entities: {}
-}
+  entities: {},
+};
 
 export default (state = initState, action) => {
-  const {type, payload} = action
+  const { type, payload } = action;
+
   switch (type) {
-    default: return state
+    default:
+      return state;
   }
-}
+};

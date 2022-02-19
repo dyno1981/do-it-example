@@ -1,11 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Button from '../04/Button'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Button from '../04/Button';
 
-function ButtonWithContext({children}, context) {
-  const {loading, setLoading} = context
+function ButtonWithContext({ children }, context) {
+  const { loading, setLoading } = context;
 
-  return <Button onPress={() => setLoading(!loading)}>{loading ? '로딩중' : children}</Button>
+  return <Button onPress={() => setLoading(!loading)}>{loading ? '로딩중' : children}</Button>;
 }
 
 ButtonWithContext.contextTypes = {
@@ -13,4 +13,4 @@ ButtonWithContext.contextTypes = {
   setLoading: PropTypes.func,
 };
 
-export default ButtonWithContext
+export default ButtonWithContext;

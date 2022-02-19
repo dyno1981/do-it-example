@@ -1,14 +1,13 @@
-import React, {PureComponent} from 'react'
-import LoadingProviderWithKey from './LoadingProviderWithKey'
+import React, { PureComponent } from 'react';
+import LoadingProviderWithKey from './LoadingProviderWithKey';
 import {
   ButtonWithDefaultLoadingContext,
-  ButtonWithLoading2Context
-} from './ButtonWithLoadingContextAndKey'
-import ButtonWithConsumer from './ButtonWithConsumer'
+  ButtonWithLoading2Context,
+} from './ButtonWithLoadingContextAndKey';
+import ButtonWithConsumer from './ButtonWithConsumer';
 
-const LoadingProvider1 = LoadingProviderWithKey()
-const LoadingProvider2 = LoadingProviderWithKey('loading2')
-
+const LoadingProvider1 = LoadingProviderWithKey();
+const LoadingProvider2 = LoadingProviderWithKey('loading2');
 function TableComponent() {
   return (
     <table>
@@ -16,7 +15,7 @@ function TableComponent() {
       <ButtonWithLoading2Context>컨텍스트2</ButtonWithLoading2Context>
       <ButtonWithConsumer>다중 소비자 예제</ButtonWithConsumer>
     </table>
-  )
+  );
 }
 
 class HomePageComponentWithTwoProvider extends PureComponent {
@@ -24,11 +23,11 @@ class HomePageComponentWithTwoProvider extends PureComponent {
     return (
       <LoadingProvider1>
         <LoadingProvider2>
-          <TableComponent/>
+          <TableComponent />
         </LoadingProvider2>
       </LoadingProvider1>
-    )
+    );
   }
 }
 
-export default HomePageComponentWithTwoProvider
+export default HomePageComponentWithTwoProvider;

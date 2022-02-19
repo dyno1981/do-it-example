@@ -1,12 +1,12 @@
-import React from 'react'
-import {Consumer} from './ModalContext'
-import Button from '../04/Button'
-import Text from '../04/Text'
+import React from 'react';
+import { Consumer } from './ModalContext';
+import Button from '../04/Button';
+import Text from '../04/Text';
 
-export default function DeleteModalContent({id, name}) {
+export default function DeleteModalContent({ id, name }) {
   return (
     <Consumer>
-      {({closeModal}) => (
+      {({ closeModal }) => (
         <div>
           <div>
             <Text>
@@ -18,5 +18,5 @@ export default function DeleteModalContent({id, name}) {
         </div>
       )}
     </Consumer>
-  )
+  );
 }

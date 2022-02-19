@@ -1,7 +1,10 @@
-import React from 'react'
-import {storiesOf} from '@storybook/react'
+import React from 'react';
+import { storiesOf } from '@storybook/react';
 
-import {CounterWithCountState} from '../05/withState'
+import { CounterWithCountState, CounterWithCountHandler } from '../05/withState';
+import Counter from '../03/Counter';
 
 storiesOf('WithState', module)
-  .addWithJSX('기본 설정', () => <CounterWithCountState/>)
+  .addWithJSX('CounterWithCountState', () => <CounterWithCountState />)
+  .addWithJSX('CounterWithCountHandler', () => <CounterWithCountHandler />)
+  .addWithJSX('CounterWithoutHoC', () => <Counter />);

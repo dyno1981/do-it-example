@@ -1,22 +1,22 @@
-import {SET_FILTER, RESET_FILTER} from '../actions/searchFilterActions'
+import { SET_FILTER, RESET_FILTER } from '../actions/searchFilterActions';
 
-const initState = {}
+const initState = {};
 
 export default function reducer(state = initState, action) {
-  const {type, payload} = action
+  const { type, payload } = action;
 
-  switch (type) {
+  switch(type) {
     case SET_FILTER: {
-      const {filterName, value} = payload
+      const { filterName, value } = payload;
       return {
         ...state,
-        [filterName]: value
-      }
+        [filterName]: value,
+      };
     }
     case RESET_FILTER: {
-      return initState
+      return initState;
     }
     default:
-      return state
+      return state;
   }
 }

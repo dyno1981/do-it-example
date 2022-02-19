@@ -1,12 +1,12 @@
-import React from 'react'
-import {storiesOf} from '@storybook/react'
+import React from 'react';
+import { storiesOf } from '@storybook/react';
 
-import Button from '../04/Button'
-import Text from '../04/Text'
-import withHoC from '../05/withHoC'
+import Button from '../04/Button';
+import Text from '../04/Text';
+import withHoC from '../05/withHoC';
 
-const ButtonWithHoC = withHoC(Button)
-const TextWithHoC = withHoC(Text)
+const ButtonWithHoC = withHoC(Button);
+const TextWithHoC = withHoC(Text);
 
 storiesOf('WithHoC', module)
   .addWithJSX('기본 설정', () => (
@@ -20,4 +20,4 @@ storiesOf('WithHoC', module)
       <ButtonWithHoC large>안녕하세요</ButtonWithHoC>
       <TextWithHoC large>안녕하세요</TextWithHoC>
     </div>
-  ))
+  ));
